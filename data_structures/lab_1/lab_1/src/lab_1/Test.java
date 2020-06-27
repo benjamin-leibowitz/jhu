@@ -8,16 +8,19 @@ public class Test {
 	public static void main(String args[]) {
 		
 		Interpreter i = new Interpreter();
-		String w = "AABB";
-		System.out.println("L1 - ".concat(w).concat(" - ").concat(Boolean.toString(i.testL1(w))));
+		String w = "ABB";
+		System.out.println("L2 - ".concat(w).concat(" - ").concat(Boolean.toString(i.testL3(w))));
 		
-		w = "ABB";
-		System.out.println("L1 - ".concat(w).concat(" - ").concat(Boolean.toString(i.testL1(w))));
+		w = "AABBBB";
+		System.out.println("L2 - ".concat(w).concat(" - ").concat(Boolean.toString(i.testL3(w))));
 		
-		w = "";
-		System.out.println("L1 - ".concat(w).concat(" - ").concat(Boolean.toString(i.testL1(w))));
+		w = "BBBAAA";
+		System.out.println("L2 - ".concat(w).concat(" - ").concat(Boolean.toString(i.testL3(w))));
 		
-		w = "ABAABBABAAABBB";
-		System.out.println("L1 - ".concat(w).concat(" - ").concat(Boolean.toString(i.testL1(w))));
+		w = "ABBB";
+		System.out.println("L2 - ".concat(w).concat(" - ").concat(Boolean.toString(i.testL3(w))));
+		
+		w = "AABBBBB";
+		System.out.println("L2 - ".concat(w).concat(" - ").concat(Boolean.toString(i.testL3(w))));
 	}
 }

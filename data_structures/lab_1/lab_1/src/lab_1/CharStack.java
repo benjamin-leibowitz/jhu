@@ -13,13 +13,14 @@ public class CharStack {
 	
 	private char stack[]; // infrastructure to store stack
 	private int top; // top of the stack
+	public static int MAX_LENGTH = 78;
 	
 	/**
 	 * Creates a default Stack object
 	*/
 	CharStack() {
 		
-		stack = new char[78]; // strings supposed to be <= 78 characters
+		stack = new char[MAX_LENGTH]; // strings supposed to be <= 78 characters
 		top = -1; 	
 		
 	}
@@ -36,7 +37,7 @@ public class CharStack {
 	public void push(char element) {
 		
 		// check if stack would overflow
-		if(top >= 78) System.out.println("Strings should be under 78 characters");
+		if(top >= MAX_LENGTH) System.out.println("Strings should be under 78 characters");
 		
 		
 		else {
@@ -100,6 +101,15 @@ public class CharStack {
 		// check if Stack is empty - if so, return null character
 		if(this.isEmpty()) return Character.MIN_VALUE;
 		else return stack[top]; // otherwise return top of stack
+		
+	}
+	
+	/**
+	 * Prints the stack - for debugging purposes only!
+	*/
+	public void print() {
+		
+		System.out.println(stack);
 		
 	}
 }
