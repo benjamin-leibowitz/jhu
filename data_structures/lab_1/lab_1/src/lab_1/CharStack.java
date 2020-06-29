@@ -11,8 +11,8 @@ package lab_1;
 
 public class CharStack {
 	
-	private char stack[]; // infrastructure to store stack
-	private int top; // top of the stack
+	public char stack[]; // infrastructure to store stack
+	public int top; // top of the stack
 	public static int MAX_LENGTH = 78;
 	
 	/**
