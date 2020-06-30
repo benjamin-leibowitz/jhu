@@ -269,12 +269,12 @@ public class Interpreter {
 				System.out.println("Warning: input string too long to test, returning false");
 				return false;
 			}
-			
+		
 			// Test to see if character is permissible
 			if(!permissible.contains(element)) return false;
 			
 			// If a B comes first, not L4
-			if(element == 'B' && n2.isEmpty()) return false;
+			if(element == 'B' && n1.isEmpty()) return false;
 			
 			// If A encountered, push unless B has been reached
 			if(element == 'A' && a_completed == false) n1.push(element);
@@ -291,14 +291,21 @@ public class Interpreter {
 				a_completed = true;	
 			}
 			
-			// If first time, automatically move elements from m1/n1 to m2/n2
-			if(first_run) {
-				
-				while(!n1.isEmpty()) n2.push(n1.pop());
-				while(!m1.isEmpty()) m2.push(m1.pop());
-				first_run = false;
-			
-			} else { // otherwise, have to test each round to make sure m/n consistent across p
+			// If next character is end, and emptying everything returns empty stacks, finish
+			if(w.charAt(s+1) == Character.MIN_VALUE) {
+				if(first_run) return true;
+				while(!n1.isEmpty() && !n2.isEmpty()) { // pop n1 and n2 to make sure they're the same length
+					n1.pop(); // pop n1
+					n3.push(n2.pop()); // pop n2 save to auxiliary stack
+				}
+				while(!m1.isEmpty() && !m2.isEmpty()) { // pop m1 and m2 to make sure they're the same length
+					m1.pop(); // pop m1
+					m3.push(m2.pop()); // pop m2 save to auxiliary stack
+				}
+				if(n1.isEmpty() && m1.isEmpty() && 
+						n2.isEmpty() && m2.isEmpty()) return true;
+				else return false;
+			} else if(w.charAt(s) == 'B' && w.charAt(s+1) == 'A' && !first_run){ 
 				
 				while(!n1.isEmpty() && !n2.isEmpty()) { // pop n1 and n2 to make sure they're the same length
 					n1.pop(); // pop n1
@@ -309,25 +316,20 @@ public class Interpreter {
 					m1.pop(); // pop m1
 					m3.push(m2.pop()); // pop m2 save to auxiliary stack
 				}
-			}
-			
-			// n1/n2/m1/m2 must be empty to be L4
-			if(w.charAt(s) == 'B' && w.charAt(s) == 'A') {
-				if(!n1.isEmpty() || !n2.isEmpty() || !m1.isEmpty() || !m2.isEmpty()) {
-					return false;
-				}
-			}
-			else { // keep iterating through input string unless no more characters
-				
-				if(w.charAt(s+1) == Character.MIN_VALUE) return true;
-				else { // return everything back to n2/m2 from auxiliary stacks and continue
+				// valid to continue to next iteration?
+				if(n1.isEmpty() && m1.isEmpty() && 
+						n2.isEmpty() && m2.isEmpty()) {
 					while(!n3.isEmpty()) n2.push(n3.pop());
 					while(!m3.isEmpty()) m2.push(m3.pop());
-					
-					// prepare for new p by refreshing a_completed and first_run
 					a_completed = false;
 				}
-			}
+			} // If first time, automatically move elements from m1/n1 to m2/n2
+			else if(first_run && w.charAt(s) == 'B' && w.charAt(s+1) == 'A') {
+				while(!n1.isEmpty()) n2.push(n1.pop());
+				while(!m1.isEmpty()) m2.push(m1.pop());
+				first_run = false;
+				a_completed = false;
+			} 
 			s++;	
 		}
 		return false;

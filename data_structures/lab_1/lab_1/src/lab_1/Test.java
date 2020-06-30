@@ -10,5 +10,14 @@ public class Test {
 		Interpreter i = new Interpreter();
 		String w = "ABBABBABB";
 		System.out.println("L4 - ".concat(w).concat(" - ").concat(Boolean.toString(i.testL4(w))));
+		
+		w = "AABBBAABBBAABB";
+		System.out.println("L4 - ".concat(w).concat(" - ").concat(Boolean.toString(i.testL4(w))));
+		
+		w = "AB";
+		System.out.println("L4 - ".concat(w).concat(" - ").concat(Boolean.toString(i.testL4(w))));
+		
+		w = "AABABB";
+		System.out.println("L4 - ".concat(w).concat(" - ").concat(Boolean.toString(i.testL4(w))));
 	}
 }
