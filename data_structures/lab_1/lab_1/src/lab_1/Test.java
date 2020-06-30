@@ -4,19 +4,25 @@ package lab_1;
 */
 
 //allows File IO
-import java.io.File; 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.io.PrintStream;
 
 public class Test {
 	
-	public static void main(String args[]) {
+	public static void main(String args[]) throws FileNotFoundException {
+		
+		PrintStream outfile = new PrintStream(args[0]);
+		System.setOut(outfile);
 		
 		// loop through file names
-		for(int arg = 0; arg < args.length; arg++) {
+		for(int arg = 1; arg < args.length; arg++) {
 			
-			// Initialize interpreeter
+			// Initialize interpreter
 			Interpreter i = new Interpreter();
 			
 			// Try except in case file name is bogus
