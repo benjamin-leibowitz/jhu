@@ -1,4 +1,4 @@
-package lab_1;
+package lab_1_test;
 
 import java.util.ArrayList;
 
@@ -15,8 +15,14 @@ import java.util.ArrayList;
 */
 public class Interpreter {
 	
+	public CharStack cs; // CharStack will be used for LIFO characteristics
+	public CharStack a; // CharStack will be used for LIFO characteristics
+	public CharStack b; // CharStack will be used for LIFO characteristics
 	public static int MAX_LENGTH = 78; // String can't be over 78 characters
-	// 3 sets of stacks - one for run p, one for run p+1, one auxiliary
+	
+	public Interpreter() {
+		
+	}
 	
 	/**
 	 * Tests whether string w contains equal numbers of A's and B's 
@@ -30,8 +36,6 @@ public class Interpreter {
 	 * @return isL1 is a boolean indicating whether w follows L1 criteria
 	 */
 	public boolean testL1(String w) {
-		
-		CharStack cs = new CharStack();
 		
 		// List of permissible characters (A or B)
 		ArrayList<Character> permissible = new ArrayList<>(2);
@@ -87,8 +91,8 @@ public class Interpreter {
 	 */
 	public boolean testL2(String w) {
 		
-		CharStack a = new CharStack();
-		CharStack b = new CharStack();
+		a = new CharStack();
+		b = new CharStack();
 		
 		// List of permissible characters (A or B)
 		ArrayList<Character> permissible = new ArrayList<>(2);
@@ -167,8 +171,8 @@ public class Interpreter {
 	 */
 	public boolean testL3(String w) {
 		
-		CharStack a = new CharStack();
-		CharStack b = new CharStack();
+		a = new CharStack();
+		b = new CharStack();
 		
 		// List of permissible characters (A or B)
 		ArrayList<Character> permissible = new ArrayList<>(2);
@@ -249,13 +253,15 @@ public class Interpreter {
 	 */
 	public boolean testL4(String w) {
 		
-		CharStack n1 = new CharStack();
-		CharStack n2 = new CharStack();
-		CharStack n3 = new CharStack();
+		// 3 sets of stacks - one for run p, one for run p+1, one auxiliary
 		
-		CharStack m1 = new CharStack();
-		CharStack m2 = new CharStack();
-		CharStack m3 = new CharStack();
+		CharStack m1 = new CharStack(); // test m for p = 1
+		CharStack m2 = new CharStack(); // save m for p>1
+		CharStack m3 = new CharStack(); // auxiliary 
+		
+		CharStack n1 = new CharStack(); // test n for p = 1
+		CharStack n2 = new CharStack(); // save n for p>1
+		CharStack n3 = new CharStack(); // auxiliary 
 		
 		// List of permissible characters (A or B)
 		ArrayList<Character> permissible = new ArrayList<>(2);
@@ -379,8 +385,8 @@ public class Interpreter {
 	 * @return isL5 is a boolean indicating whether w follows L5 criteria
 	 */
 	public boolean testL5(String w) {
-
-		CharStack a = new CharStack();
+		
+		a = new CharStack();
 		
 		// First test to see if it's an empty string (epsilon case)
 		if(w.isEmpty()) return false; 
@@ -407,6 +413,8 @@ public class Interpreter {
 			else if(element == 'A' && a_reached) { 
 				
 				// String should have only one A
+				System.out.println("Warning: your input string can "
+						+ "contain only one A, returning false");
 				return false;
 			}
 			else if(!a_reached){
@@ -439,8 +447,8 @@ public class Interpreter {
 	 * @return isL6 is a boolean indicating whether w follows L6 criteria
 	 */
 	public boolean testL6(String w) {
-
-		CharStack a = new CharStack();
+		
+		a = new CharStack();
 		
 		// First test to see if it's an empty string (epsilon case)
 		if(w.isEmpty()) return false; 
@@ -448,29 +456,27 @@ public class Interpreter {
 		// Loop through string, while end hasn't been reached
 		w += Character.MIN_VALUE; // Stop char (not permitted to test length)
 		int s = 0; // string index	
+		boolean a_reached = false; // Notify when A is reached
 		
 		while(w.charAt(s) != Character.MIN_VALUE) {
 			
 			char element = w.charAt(s); // String w character s
 			
 			// Test length only to prevent stack overflow
-			if(s >= MAX_LENGTH-1) { 
+			if(s > MAX_LENGTH) { 
 				System.out.println("Warning: input string too long to test, "
 						+ "returning false");
 				return false;
 			}
 			
-			// if this character is on the top of the stack, not L6
-			if(!a.isEmpty() && element == a.peek()) return false;
-			else if(!a.isEmpty()) a.push(element);
-			
 			// push first element regardless
-			else a.push(element);
+			if(s == 0) a.push(element);
+			
+			// if this character is on the top of the stack, not L6
+			else if(element == a.peek()) return false;
 			
 			// if next string is end character, it passes
 			if(w.charAt(s + 1) == Character.MIN_VALUE) return true;
-			
-			s++;
 		}
 		return false;
 	}
