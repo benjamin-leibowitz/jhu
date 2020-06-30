@@ -16,10 +16,12 @@ public class Test {
 		// loop through file names
 		for(int arg = 0; arg < args.length; arg++) {
 			
+			// Initialize interpreeter
 			Interpreter i = new Interpreter();
 			
-			// try except in case file name is bogus
+			// Try except in case file name is bogus
 			try {
+				// Read file
 				FileReader fr = new FileReader(args[arg]);
 		        BufferedReader filename = new BufferedReader(fr);
 		        
@@ -41,6 +43,7 @@ public class Test {
 		        	String l5 = Boolean.toString(i.testL5(w));
 		        	String l6 = Boolean.toString(i.testL6(w));
 		        	
+		        	// Print all the results
 		        	System.out.println("L1 - ".concat(l1));
 		        	System.out.println("L2 - ".concat(l2));
 		        	System.out.println("L3 - ".concat(l3));
@@ -50,6 +53,7 @@ public class Test {
 		        	
 		        	w = filename.readLine(); // next line
 		        }
+		        // Close the file after finishing
 		        filename.close();
 				
 			} catch(Exception e){ // if file does not exist

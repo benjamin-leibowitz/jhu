@@ -50,7 +50,7 @@ public class Interpreter {
 			char element = w.charAt(s); // String w character s
 			
 			// Test length only to prevent stack overflow
-			if(s > MAX_LENGTH) { 
+			if(s >= MAX_LENGTH-1) { 
 				System.out.println("Warning: input string too long to test, "
 						+ "returning false");
 				return false;
@@ -108,7 +108,7 @@ public class Interpreter {
 			char element = w.charAt(s); // String w character s
 			
 			// Test length only to prevent stack overflow
-			if(s > MAX_LENGTH) { 
+			if(s >= MAX_LENGTH-1) { 
 				
 				System.out.println("Warning: input string too long to test, "
 						+ "returning false");
@@ -188,7 +188,7 @@ public class Interpreter {
 			char element = w.charAt(s); // String w character s
 			
 			// Test length only to prevent stack overflow
-			if(s > MAX_LENGTH) { 
+			if(s >= MAX_LENGTH-1) { 
 				System.out.println("Warning: input string too long to test, "
 						+ "returning false");
 				return false;
@@ -276,7 +276,7 @@ public class Interpreter {
 			char element = w.charAt(s); // String w character s
 			
 			// Test length only to prevent stack overflow
-			if(s > MAX_LENGTH) { 
+			if(s >= MAX_LENGTH-1) { 
 				
 				System.out.println("Warning: input string too long to test, "
 						+ "returning false");
@@ -395,7 +395,7 @@ public class Interpreter {
 			char element = w.charAt(s); // String w character s
 
 			// Test length only to prevent stack overflow
-			if(s > MAX_LENGTH) { 
+			if(s >= MAX_LENGTH-1) { 
 				System.out.println("Warning: input string too long to test, "
 						+ "returning false");
 				return false;
