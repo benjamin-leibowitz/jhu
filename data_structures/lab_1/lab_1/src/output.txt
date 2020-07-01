@@ -1,0 +1,208 @@
+File: lab_1/LabRegExpRequiredInput.txt
+String: AAABBB
+L1 - true
+L2 - true
+L3 - false
+L4 - true
+L5 - false
+L6 - false
+String: AB
+L1 - true
+L2 - true
+L3 - false
+L4 - true
+L5 - false
+L6 - true
+String: 
+L1 - false
+L2 - false
+L3 - false
+L4 - false
+L5 - false
+L6 - false
+String: ABABABA
+L1 - false
+L2 - false
+L3 - false
+L4 - false
+L5 - false
+L6 - true
+String: ABAB
+L1 - true
+L2 - false
+L3 - false
+L4 - true
+L5 - false
+L6 - true
+String: BBAA
+L1 - true
+L2 - false
+L3 - false
+L4 - false
+L5 - false
+L6 - false
+String: BBBAA
+L1 - false
+L2 - false
+L3 - false
+L4 - false
+L5 - false
+L6 - false
+String: AAB
+L1 - false
+L2 - false
+L3 - false
+L4 - true
+L5 - false
+L6 - false
+String: AABBCCD
+L1 - false
+L2 - false
+L3 - false
+L4 - false
+L5 - false
+L6 - false
+String: ABCBA
+L1 - false
+L2 - false
+L3 - false
+L4 - false
+L5 - false
+L6 - true
+String: ABBBA
+L1 - false
+L2 - false
+L3 - false
+L4 - false
+L5 - false
+L6 - false
+String: ABBA
+L1 - true
+L2 - false
+L3 - false
+L4 - false
+L5 - false
+L6 - false
+String: ABAABBAAABBB
+L1 - true
+L2 - false
+L3 - false
+L4 - false
+L5 - false
+L6 - false
+String: AABACABAA
+L1 - false
+L2 - false
+L3 - false
+L4 - false
+L5 - false
+L6 - false
+String: AABBBAABBB
+L1 - false
+L2 - false
+L3 - false
+L4 - true
+L5 - false
+L6 - false
+String: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Warning: input string too long to test, returning false
+Warning: input string too long to test, returning false
+Warning: input string too long to test, returning false
+Warning: input string too long to test, returning false
+L1 - false
+L2 - false
+L3 - false
+L4 - false
+L5 - false
+L6 - false
+String: AABBBAABBBAABBBB
+L1 - false
+L2 - false
+L3 - false
+L4 - false
+L5 - false
+L6 - false
+String: AABBBAABBBAABBB
+L1 - false
+L2 - false
+L3 - false
+L4 - true
+L5 - false
+L6 - false
+String: FDSASDF
+L1 - false
+L2 - false
+L3 - false
+L4 - false
+L5 - true
+L6 - true
+String: !!!!@@####@JKL
+L1 - false
+L2 - false
+L3 - false
+L4 - false
+L5 - false
+L6 - false
+String: A
+L1 - false
+L2 - false
+L3 - false
+L4 - true
+L5 - false
+L6 - true
+String: AB
+L1 - true
+L2 - true
+L3 - false
+L4 - true
+L5 - false
+L6 - true
+String: ABB
+L1 - false
+L2 - false
+L3 - true
+L4 - true
+L5 - false
+L6 - false
+String: ABBABBABB
+L1 - false
+L2 - false
+L3 - false
+L4 - true
+L5 - false
+L6 - false
+String: AABBBBAABBBBAABBBBB
+L1 - false
+L2 - false
+L3 - false
+L4 - false
+L5 - false
+L6 - false
+String: AABBAAABBAABB
+L1 - false
+L2 - false
+L3 - false
+L4 - false
+L5 - false
+L6 - false
+String: JKL:A:LKJ
+L1 - false
+L2 - false
+L3 - false
+L4 - false
+L5 - true
+L6 - true
+String: asdfjkl;
+L1 - false
+L2 - false
+L3 - false
+L4 - false
+L5 - false
+L6 - true
+String: aassddffjjkkll;;
+L1 - false
+L2 - false
+L3 - false
+L4 - false
+L5 - false
+L6 - false
