@@ -17,9 +17,9 @@ Java Version: OpenJDK 64-Bit Server VM 18.9 (build 11+28, mixed mode)
 Java IDE: Eclipse 2020-03 (4.15.0)
 
 ## Running this program
-The java code has already been compiled, to run it, please navigate to the src folder
+The java code has already been compiled, to run it, please navigate to the ```src``` folder
 and run the following command:
 ```
-java Test.java {output-file-name-1} {input-file-name-1} ... {input-file-name-n}
+java lab_1/Test.java {output-file-name} {input-file-name-1} ... {input-file-name-n}
 ```
 where file-name-i is a .txt file with one row per string to be tested.
