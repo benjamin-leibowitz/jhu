@@ -1,0 +1,2 @@
+This file does not exist: Lab2RequiredInput.txt. Please try another file.
+java.io.FileNotFoundException: Lab2RequiredInput.txt (No such file or directory)
