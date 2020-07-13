@@ -49,18 +49,19 @@ public class Test {
 	        			
 	        		}
 	        		
-	        		// If parsing matrix, keep going
+	        		// If parsing matrix, go to next line
 	        		if(i != matrix.length - 1) {
-	        			// Get subsequent lines of text file
+	
 		    	        w = file.readLine();
 		    	        
-		    	        // Convert line of text to string array
-			        	row_str = w.split(" ");
+			        	row_str = w.split(" "); // String -> String array
 	        		}
 	        		
-	        		
 	        	}
+	        	
+	        	// Print back matrix
 	        	System.out.println(Arrays.deepToString(matrix));
+	        	
 	        	w = file.readLine(); // next line
 	        }
 	        // Close the file after finishing
