@@ -1,0 +1,16 @@
+File: Lab3RequiredInput.txt
+[[1]]
+0 
+
+
+[[5]]
+0 
+
+
+[[2]]
+0 
+
+
+[[2, 3], [5, 9]]
+This file does not exist: Lab3RequiredInput.txt. Please try another file.
+java.lang.NullPointerException
